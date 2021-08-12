@@ -31,5 +31,8 @@ last three branch decisions: NT NT NT, NT NT T, NT T NT, NT T T, T NT NT, T NT T
 ## Usage
 First, the python script test.py should be ran to produce the test.txt file for the test branch outcomes.  Then, as long as all the files are in the same folder, the test bench programs should run on any VHDL simulator but it has only been tested using ModelSim software.  The format of the test input is B{1 or 2} {T or NT}, e.g.:
 ```B1 T```
-would represent that branch 1 was taken.  Given this format, one could create their own branch outcomes for testing.  
+would represent that branch 1 was taken.  Given this format, one could create their own branch outcomes for testing.
+
+## Bugs
+There is 1 bug that is being worked on involving the (3,2) correlating branch predictor.  The bug is that the missed predictions counted after running the test bench is 1 less than what is expected.  I believe this could be an initilization issue of the system given that it is performing I/O per clock cycles.  This is a work in progress and will be updated when the bug gets fixed.  
 
